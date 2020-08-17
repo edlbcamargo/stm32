@@ -115,7 +115,7 @@ void loop() {
                     }
                 }
             }
-            float periodo_medio = soma_periodos / Nciclos;
+            float periodo_medio = (float)soma_periodos / (float)Nciclos;
             Serial.print("Periodo medio (pontos): "); Serial.print(periodo_medio); Serial.println("pontos");
             Serial.print("Frequencia calculada (aprox): "); Serial.print(periodo_medio*sampleFreqKhz/50); Serial.println("kHz");
             Serial.print("Frequencia de amostragem ajustada: "); Serial.print(novo_sampleFreqKhz); Serial.println("kHz");
