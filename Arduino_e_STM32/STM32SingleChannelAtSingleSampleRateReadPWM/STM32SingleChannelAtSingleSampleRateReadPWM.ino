@@ -27,7 +27,7 @@ uint16_t buffer[maxSamples];
 uint8_t flag_lido;
 uint16_t contador;
 
-#define sampleFreqKhz       50
+#define sampleFreqKhz       500
 #define samplePeriodus      1000 / sampleFreqKhz
 #define ticksPerSecond      2 * sampleFreqKhz * 1000 / maxSamples
 
