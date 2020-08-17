@@ -43,3 +43,23 @@ O programa funciona da seguinte forma:
 Alternativamente, pode-se ligar flag _flag\_calcula\_frequencia_, que faz com que o programa calcule a frequência amostrada em cada frequência ajustada e mostre os valores, que podem ver vistos no Monitor Serial ou no Ploter Serial.
 
 
+### Arduino_e_STM32
+
+Programa para verificação da taxa de amostragem da coleta dados analogicos do conversor AD.
+
+O PWM (frequência de aproximadamente 10kHz) é gerado via software por um Arduino, enquanto a conversão AD é feita no STM32.
+
+#### ArduinoGeraPWM
+
+Programa para Arduino (testado no Arduino Nano) para geração via software de uma onda PWM com frequência de aproximadamente 10kHz e _duty cycle_ de 50%.
+
+Foi utilizado um osciloscópio para fazer um ajuste fino da frequência do PWM (frequencia medida: 9945Hz).
+
+#### STM32SingleChannelAtSingleSampleRateReadPWM
+
+Este programa mede uma onda PWM de 10kHz externa pela porta A0 e calcula a frequência de amostragem, soltando os valores pela porta serial.
+
+A frequência de amostragem é fixa, podendo ser escolhida no código do programa.
+
+
+
