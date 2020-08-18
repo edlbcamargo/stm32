@@ -26,6 +26,8 @@ Programa para verificação da taxa de amostragem da coleta dados analogicos do 
 
 O próprio programa cria um PWM via software, coleta esse PWM (necessário ligar os pinos A0 e B0), e calcula a taxa de amostragem.
 
+A frequência desse PWM, neste caso, é aproximada e não é confiável. Assim, a taxa de amostragem calculada também não é confiável.
+
 A taxa de amostragem é controlada por um Timer via hardware, que dispara o conversor AD.
 
 Neste programa, a taxa de amostragem varia automaticamente entre 50 e 500KHz, para que se possa observar o efeito em diferentes ajustes.
@@ -41,6 +43,9 @@ O programa funciona da seguinte forma:
 * o programa varia automaticamente a frequência de amostragem (de 1 em 1 entre 50 e 500kHz) e a frequência do PWM.
 
 Alternativamente, pode-se ligar flag _flag\_calcula\_frequencia_, que faz com que o programa calcule a frequência amostrada em cada frequência ajustada e mostre os valores, que podem ver vistos no Monitor Serial ou no Ploter Serial.
+
+![SingleChannelADCPWMFreq_PlotterSerialOut](SingleChannelADCPWMFreq/SingleChannelADCPWMFreq_PlotterSerialOut.png)
+_Taxa de amostragem calculada (vermelho) e ajustada (azul) ao longo do tempo_
 
 
 ### Arduino_e_STM32
@@ -61,5 +66,16 @@ Este programa mede uma onda PWM de 10kHz externa pela porta A0 e calcula a frequ
 
 A frequência de amostragem é fixa, podendo ser escolhida no código do programa.
 
+#### STM32SingleChannelAtVariableSampleRateReadPWM
+
+Este programa mede uma onda PWM de 10kHz externa pela porta A0 e calcula a frequência de amostragem, soltando os valores pela porta serial.
+
+A frequência de amostragem é variável entre 50 e 500kHz, variando de 1 em 1kHz.
+
+A taxa de amostragem calculada é tão confiável quanto a frequência do PWM gerada pelo Arduíno.
+
+
+![STM32SingleChannelAtVariableSampleRateReadPWM_PlotterSerialOut](Arduino_e_STM32/STM32SingleChannelAtVariableSampleRateReadPWM/STM32SingleChannelAtVariableSampleRateReadPWM_PlotterSerialOut.png)
+_Taxa de amostragem calculada (azul) e ajustada (vermelho) ao longo do tempo_
 
 
