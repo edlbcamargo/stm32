@@ -3,6 +3,13 @@ Códigos de exemplo de uso do stm32.
 
 ## Programas:
 
+### FastAnalog_STM32
+
+Realiza coleta em frequencias de amostragem entre **2,571MSps** e 71,4kSps, conforme ajustado pela variavel 'time_base'.
+
+Envia os sinais pela serial, em ASCII, para visualização pelo PlotterSerial, 1x por segundo.
+
+
 ### SingleChannelAtSampleRateSimpleDigOut
 
 Programa para verificação da taxa de amostragem da coleta dados analogicos do conversor AD.
