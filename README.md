@@ -86,3 +86,8 @@ A taxa de amostragem calculada é tão confiável quanto a frequência do PWM ge
 _Taxa de amostragem calculada (azul) e ajustada (vermelho) ao longo do tempo_
 
 
+### Demodulacao
+
+Programa que calcula amplitude e fase de uma onda senoidal coletada pelo ADC e envia valores pela serial.
+
+
